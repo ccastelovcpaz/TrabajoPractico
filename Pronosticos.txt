@@ -1,0 +1,3 @@
+idPartido;idEquipo1;Gana1;Empata;Gana2;idEquipo2
+1;1;X;;;2
+2;3;;X;;4
