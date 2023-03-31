@@ -35,6 +35,12 @@ public class Equipo {
 	public void setDescripcionEquipo(String descripcionEquipo) {
 		this.descripcionEquipo = descripcionEquipo;
 	}
+
+	@Override
+	public String toString() {
+		return "[idEquipo=" + idEquipo + ", nombreEquipo=" + nombreEquipo + ", descripcionEquipo="
+				+ descripcionEquipo + "]";
+	}
 	
 	
 }

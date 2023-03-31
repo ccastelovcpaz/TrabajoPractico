@@ -64,25 +64,31 @@ public class Partido {
 		this.golesEquipo2 = golesEquipo2;
 	}
 	
-	public String resultado(int idEquipo) {
+	@Override
+	public String toString() {
+		return "[idPartido=" + idPartido + ", equipo1=" + equipo1 + ", golesEquipo1=" + golesEquipo1
+				+ ", equipo2=" + equipo2 + ", golesEquipo2=" + golesEquipo2 + "]";
+	}
+
+	public ResultadoEquipoEnum resultado(int idEquipo) {
 		if (idEquipo == this.equipo1.getIdEquipo()) {
 			if (this.golesEquipo1 > this.golesEquipo2) {
-				return "GANA";
+				return ResultadoEquipoEnum.GANA;
 			}
 			if (this.golesEquipo1 < this.golesEquipo2) {
-				return "PIERDE";
+				return ResultadoEquipoEnum.PIERDE;
 			}
-			return "EMPATA";
+			return ResultadoEquipoEnum.EMPATA;
 		}
 		if (idEquipo == this.equipo2.getIdEquipo()) {
 			if (this.golesEquipo2 > this.golesEquipo1) {
-				return "GANA";
+				return ResultadoEquipoEnum.GANA;
 			}
 			if (this.golesEquipo2 < this.golesEquipo1) {
-				return "PIERDE";
+				return ResultadoEquipoEnum.PIERDE;
 			}
-			return "EMPATA";
+			return ResultadoEquipoEnum.PIERDE;
 		}
-		return "";
+		return null;
 	}
 }

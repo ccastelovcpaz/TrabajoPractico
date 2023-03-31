@@ -4,19 +4,15 @@ public class Pronostico {
 	
 	private Partido partido;
 	private Equipo equipo;
-	private String pronostico;
+//	private String pronostico;
+	private ResultadoEquipoEnum pronostico;
 	
-	public Pronostico(Partido partido, Equipo equipo, String pronostico) {
+	public Pronostico(Partido partido, Equipo equipo, ResultadoEquipoEnum pronostico) {
 		this.partido = partido;
 		this.equipo = equipo;
 		this.pronostico = pronostico;
 	}
 	
-//	public Pronostico(String[] lineaCSV) {
-//		this.partido=Integer.parseInt(lineaCSV[0]);
-//		
-//	}
-
 	public Partido getPartido() {
 		return partido;
 	}
@@ -33,17 +29,22 @@ public class Pronostico {
 		this.equipo = equipo;
 	}
 
-	public String getPronostico() {
+	public ResultadoEquipoEnum getPronostico() {
 		return pronostico;
 	}
 
-	public void setPronostico(String pronostico) {
+	public void setPronostico(ResultadoEquipoEnum pronostico) {
 		this.pronostico = pronostico;
 	}
 	
+	@Override
+	public String toString() {
+		return "[partido=" + partido + ", equipo=" + equipo + ", pronostico=" + pronostico + "]";
+	}
+
 	public int getPuntos() {
 		int puntos = 0;
-		String resultadoRealParaEquipo = partido.resultado(this.equipo.getIdEquipo());
+		ResultadoEquipoEnum resultadoRealParaEquipo = partido.resultado(this.equipo.getIdEquipo());
 		if (resultadoRealParaEquipo == this.pronostico) {
 			puntos++;
 		}

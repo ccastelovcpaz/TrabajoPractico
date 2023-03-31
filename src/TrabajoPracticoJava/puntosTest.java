@@ -12,8 +12,8 @@ class puntosTest {
 	void test() {
 		String rutaArchivoResultados="Resultados.txt";
 		String rutaArchivoPronosticos="Pronosticos.txt";
-		ArrayList<Partido> partidos = Principal.leerResultadosYCargarPartidosYEquipos(rutaArchivoResultados);
-		ArrayList<Pronostico> pronosticos = Principal.leerYCargarPronosticos(rutaArchivoPronosticos,partidos);
+		ArrayList<Partido> partidos = LectorArchivos.leerResultadosYCargarPartidosYEquipos(rutaArchivoResultados);
+		ArrayList<Pronostico> pronosticos = LectorArchivos.leerYCargarPronosticos(rutaArchivoPronosticos,partidos);
 		assertEquals(1,Principal.calcularPuntos(pronosticos));
 	}
 
