@@ -4,7 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class LectorArchivos {
+public class LectorArchivosTxt {
 
 	public static ArrayList<Partido> leerResultadosYCargarPartidosYEquipos(String rutaArchivo) {
 		ArrayList<Partido> partidos = new ArrayList<Partido>();
